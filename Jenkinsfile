@@ -16,7 +16,12 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-
+stage('test') {
+    steps {
+        echo 'Running unit tests...'
+        sh 'mvn test'
+    }
+}
         stage('build') {
             steps {
                  sh 'mvn clean install'
